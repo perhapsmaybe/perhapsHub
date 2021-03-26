@@ -4,6 +4,14 @@
 
 :warning: **You** may get banned, it is highly recommended to use an alt
 
+# Supported Games
+  - Blade Quest
+    - Auto Farm
+    - Mob TP
+    - Auto Attack, Dodge, Support, Damage, Merge, Claim Quests, Equip Best Sword
+  - Arsenal
+    - Coming Soon
+
 # Cross Compatibility Script
   - [ Supports ]
     - Synapse X
@@ -50,11 +58,3 @@
               API.customwarn("perhapsHub", "Invalid Function!")
             end
             ```
-
-# Supported Games
-  - Blade Quest
-    - Auto Farm
-    - Mob TP
-    - Auto Attack, Dodge, Support, Damage, Merge, Claim Quests, Equip Best Sword
-  - Arsenal
-    - Coming Soon
