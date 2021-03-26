@@ -22,10 +22,7 @@ View the **Cross Compatibility Script's** full functions here: **[Functions](htt
     - Protosmasher
     - KRNL
     - Sirhurt
-    - Proxo
-    - Fluxus 
-    - EasyExploits
-  
+
   
   - [ Functions ]
     - Custom Functions
