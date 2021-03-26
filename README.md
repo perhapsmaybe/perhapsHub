@@ -33,10 +33,22 @@
       - customwarn
         - Usage: customwarn(Title, Text)
         - Example: ```customwarn("perhapsHub", "Started!")```
-        - Output: "perhapsHub >> Started!
+        - Output: "perhapsHub >> Started!"
       - customprint
+        - Usage: customprint(Title, Text)
+        - Example: ```customprint("perhapsHub", "Loaded!")```
+        - Output: "perhapsHub >> Loaded!"
       - getfunction
+      - Usage: getfunction(FunctionName)
+        - Example: 
+        -             ```lua
+                      customwarn("perhapsHub", "Started!")
+                      ```
+        - Output: "perhapsHub >> Started!"
       - checkforfunction
+      - Usage: customwarn(Title, Text)
+        - Example: ```customwarn("perhapsHub", "Started!")```
+        - Output: "perhapsHub >> Started!"
 
 # Supported Games
   - Blade Quest
