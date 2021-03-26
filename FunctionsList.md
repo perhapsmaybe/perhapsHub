@@ -1,5 +1,5 @@
 # perhapsHub - Cross Compatibility Functions 
-- [ File System ] -
+- [ File System ]
   - writefile
   - readfile
   - isfile
@@ -9,3 +9,9 @@
   - appendfile
   - loadfile
   - isfolder
+
+- [ Custom Functions]
+  - customwarn
+  - customprint
+  - getfunction
+  - checkforfunction
