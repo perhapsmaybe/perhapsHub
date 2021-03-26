@@ -16,16 +16,6 @@
     - EasyExploits
   
   - [ Functions ]
-    - File System
-      - writefile
-      - readfile
-      - isfile
-      - makefolder
-      - delfolder
-      - delfile
-      - appendfile
-      - loadfile
-      - isfolder
     - Custom Functions
       - customwarn
         - Usage: customwarn(Title, Text)
