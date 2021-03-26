@@ -12,11 +12,8 @@
     - KRNL
     - Sirhurt
     - Proxo
-    - WeAreDevs
     - Shadow 
     - EasyExploits
-    - Viva
-    - Coco
   
   - [ Functions ]
     - File System
