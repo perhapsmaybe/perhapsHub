@@ -45,7 +45,7 @@
             ```
         - Output: "perhapsHub >> Loaded!"
       - getfunction
-      - Usage: getfunction(Name)
+        - Usage: getfunction(Name)
         - Example: 
             ```lua 
             local GetFunction = API.getfunction("writefile")
@@ -56,7 +56,7 @@
             ```
         - Output: "perhapsHub >> Started!"
       - checkforfunction
-      - Usage: checkforfunction(Name)
+        - Usage: checkforfunction(Name)
         - Example:  
             ```lua 
             local CheckForFunction = API.checkforfunction("writefile")
