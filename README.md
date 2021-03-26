@@ -16,6 +16,7 @@ View the **Cross Compatibility Script's** full functions here: **[Functions](htt
     - Coming Soon
 
 # Cross Compatibility Script
+**Note:** Script automatically adds all exploit functions into the API, it will just convert some to one single name across all supported exploits
   - [ Supports ]
     - Synapse X
     - Sentinel
