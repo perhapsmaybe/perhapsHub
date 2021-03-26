@@ -36,14 +36,12 @@
             ```lua 
             API.customwarn("perhapsHub", "Started!")
             ```
-        - Output: "perhapsHub >> Started!"
       - customprint
         - Usage: customprint(Title, Text)
         - Example: 
             ```lua 
             API.customprint("perhapsHub", "Loaded!")
             ```
-        - Output: "perhapsHub >> Loaded!"
       - getfunction
         - Usage: getfunction(Name)
         - Example: 
@@ -54,7 +52,6 @@
               GetFunction("perhapsHub.txt", [[print('hey')]])
             end
             ```
-        - Output: "perhapsHub >> Started!"
       - checkforfunction
         - Usage: checkforfunction(Name)
         - Example:  
@@ -66,7 +63,6 @@
               API.customwarn("perhapsHub", "Invalid Function!")
             end
             ```
-        - Output: "perhapsHub >> Started!"
 
 # Supported Games
   - Blade Quest
