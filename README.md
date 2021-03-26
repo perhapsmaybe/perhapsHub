@@ -32,21 +32,40 @@
     - Custom Functions
       - customwarn
         - Usage: customwarn(Title, Text)
-        - Example: ```customwarn("perhapsHub", "Started!")```
+        - Example:  
+            ```lua 
+            API.customwarn("perhapsHub", "Started!")
+            ```
         - Output: "perhapsHub >> Started!"
       - customprint
         - Usage: customprint(Title, Text)
-        - Example: ```customprint("perhapsHub", "Loaded!")```
-        - Output: "perhapsHub >> Loaded!"
-      - getfunction
-      - Usage: getfunction(FunctionName)
         - Example: 
             ```lua 
-            customwarn("perhapsHub", "Started!")```
+            API.customprint("perhapsHub", "Loaded!")
+            ```
+        - Output: "perhapsHub >> Loaded!"
+      - getfunction
+      - Usage: getfunction(Name)
+        - Example: 
+            ```lua 
+            local GetFunction = API.getfunction("writefile")
+            if GetFunction ~= false then
+              API.customprint("perhapsHub", "Valid Function!")
+              GetFunction("perhapsHub.txt", [[print('hey')]])
+            end
+            ```
         - Output: "perhapsHub >> Started!"
       - checkforfunction
-      - Usage: customwarn(Title, Text)
-        - Example: ```customwarn("perhapsHub", "Started!")```
+      - Usage: checkforfunction(Name)
+        - Example:  
+            ```lua 
+            local CheckForFunction = API.checkforfunction("writefile")
+            if GetFunction ~= false then
+              API.customprint("perhapsHub", "Valid Function!")
+            else
+              API.customwarn("perhapsHub", "Invalid Function!")
+            end
+            ```
         - Output: "perhapsHub >> Started!"
 
 # Supported Games
