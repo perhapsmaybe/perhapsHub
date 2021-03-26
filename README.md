@@ -32,8 +32,7 @@
     - Custom Functions
       - customwarn
         - Usage: customwarn(Title, Text)
-        - Example: ```lua
-        customwarn("perhapsHub", "Started!")```
+        - Example: ```customwarn("perhapsHub", "Started!")```
         - Output: "perhapsHub >> Started!
       - customprint
       - getfunction
