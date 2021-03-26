@@ -16,3 +16,5 @@
   - customprint
   - getfunction
   - checkforfunction
+  - blacklistexploit
+  
