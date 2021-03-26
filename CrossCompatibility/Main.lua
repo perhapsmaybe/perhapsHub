@@ -18,7 +18,8 @@ local APIFunctions = {
     ["customprint"] = customprint,
     ["getfunction"] = GetFunction,
     ["checkforfunction"] = CheckForFunction,
-    ["getfenv"] = getfenv
+    ["getfenv"] = getfenv,
+    ["getsenv"] = getsenv
 }
 
 local TempTable = {
@@ -29,6 +30,40 @@ local TempTable = {
 }
 
 local BlacklistedExploits = {}
-for i, v in pairs(APIFunctions) do local Exploit = syn and is_sirhurt_closure and "Sirhurt" or syn and not is_sirhurt_closure and not pebc_execute and syn.secure_call and "Synapse X" or secure_load and issentinelclosure and "Sentinel" or pebc_execute and "Protosmasher" or KRNL_LOADED and "Krnl" or WrapGlobal and "WRD" or isvm and "Proxo" or shadow_env and "Shadow" or jit and "EasyExploits" or unit and "Unit" or IS_VIVA_LOADED and "Viva" or IS_COCO_LOADED and "Coco" or getexecutorname and getexecutorname() == "Scriptware" and "Scriptware" or "Undetected" if v ~= nil and typeof(v) == "function" then local a = v API[i] = function(...) if not table.find(BlacklistedExploits, Exploit) then return a(...) end end elseif TempTable[i] then local a = TempTable[i] API[i] = function(...) if not table.find(BlacklistedExploits, Exploit) then return a(...) end end else local FoundFunction, Function = CheckForFunction(v) if FoundFunction and typof(Function) == "function" then local a = Function API[i] = function(...) if not table.find(BlacklistedExploits, Exploit) then return a(...) end end end end end
+for i, v in pairs(APIFunctions) do 
+    local Exploit = syn and is_sirhurt_closure and "Sirhurt" or syn and not is_sirhurt_closure and not pebc_execute and syn.secure_call and "Synapse X" or secure_load and issentinelclosure and "Sentinel" or pebc_execute and "Protosmasher" or KRNL_LOADED and "Krnl" or WrapGlobal and "WRD" or isvm and "Proxo" or shadow_env and "Shadow" or jit and "EasyExploits" or unit and "Unit" or IS_VIVA_LOADED and "Viva" or IS_COCO_LOADED and "Coco" or getexecutorname and getexecutorname() == "Scriptware" and "Scriptware" or "Undetected" 
+    if v ~= nil and typeof(v) == "function" then 
+        local a = 
+        v API[i] = function(...) 
+            if not table.find(BlacklistedExploits, Exploit) then 
+                return a(...) 
+            end 
+        end 
+    elseif TempTable[i] then 
+        local a = TempTable[i] 
+        API[i] = function(...) 
+            if not table.find(BlacklistedExploits, Exploit) then 
+                return a(...) 
+            end 
+        end 
+    else 
+        local FoundFunction, Function = CheckForFunction(v) 
+        if FoundFunction and typof(Function) == "function" then 
+            local a = Function 
+            API[i] = function(...) 
+                if not table.find(BlacklistedExploits, Exploit) then 
+                    return a(...) 
+                end 
+            end 
+        else
+            API[i] = function(...)
+                customwarn("perhapsHub", "Function is not supported!")
+                return false
+            end
+        end
+    end 
+end
 
 function API.blacklistexploit(Exploit) if Exploit == CurrentExploit then table.insert(BlacklistedExploits, Exploit) end end
+
+return API
