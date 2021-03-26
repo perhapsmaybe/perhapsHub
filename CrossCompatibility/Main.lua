@@ -65,7 +65,7 @@ for i, v in pairs(APIFunctions) do
 end
 
 for i, v in pairs(getfenv(0)) do
-    if is_synapse_function(v) then
+    if is_synapse_function(v) and API[i] == nil then
        API[i] = v 
     end
 end
