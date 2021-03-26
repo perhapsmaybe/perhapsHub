@@ -41,9 +41,9 @@
       - getfunction
       - Usage: getfunction(FunctionName)
         - Example: 
-        -             ```lua
-                      customwarn("perhapsHub", "Started!")
-                      ```
+            ```lua
+            customwarn("perhapsHub", "Started!")
+            ```
         - Output: "perhapsHub >> Started!"
       - checkforfunction
       - Usage: customwarn(Title, Text)
