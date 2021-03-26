@@ -10,9 +10,35 @@
     - Sentinel
     - Protosmasher
     - KRNL
+    - Sirhurt
+    - Proxo
+    - WeAreDevs
+    - Shadow 
+    - EasyExploits
+    - Viva
+    - Coco
   
   - [ Functions ]
-    - setclipboard 
+    - File System
+      - writefile
+      - readfile
+      - isfile
+      - makefolder
+      - delfolder
+      - delfile
+      - appendfile
+      - loadfile
+      - isfolder
+    - Custom Functions
+      - customwarn
+        - Usage: customwarn(Title, Text)
+        - Example: ```lua
+        customwarn("perhapsHub", "Started!")
+        ```
+        - Output: "perhapsHub >> Started!
+      - customprint
+      - getfunction
+      - checkforfunction
 
 # Supported Games
   - Blade Quest
