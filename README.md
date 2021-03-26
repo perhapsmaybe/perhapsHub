@@ -4,6 +4,7 @@
 
 View the **Cross Compatibility Script's** full functions here: **[Functions](https://github.com/perhapsmaybe/perhapsHub/blob/master/FunctionsList.md)**
 
+
 :warning: **You** may get banned, it is highly recommended to use an alt
 
 # Supported Games
