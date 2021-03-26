@@ -26,6 +26,31 @@ View the **Cross Compatibility Script's** full functions here: **[Functions](htt
   
   - [ Functions ]
     - Custom Functions
+      - getfunction
+        - Usage: getfunction(Name)
+        - Example: 
+            ```lua 
+            local GetFunction = API.getfunction("writefile")
+            if GetFunction ~= false then
+              API.customprint("perhapsHub", "Valid Function!")
+              GetFunction("perhapsHub.txt", [[print('hey')]])
+            end
+            ```
+      - getexploit
+        - Usage: getexploit(Name)
+        - Example: 
+            ```lua 
+            local GetExploit = API.getexploit()
+            if GetExploit ~= "Undetected" then
+              API.customprint("GetExploit", GetExploit)
+            end
+            ```
+      - blacklistexploit
+        - Usage: blacklistexploit(Exploit)
+        - Example: 
+            ```lua 
+            API.blacklistexploit("Sirhurt")
+            ``` 
       - customwarn
         - Usage: customwarn(Title, Text)
         - Example:  
@@ -37,16 +62,6 @@ View the **Cross Compatibility Script's** full functions here: **[Functions](htt
         - Example: 
             ```lua 
             API.customprint("perhapsHub", "Loaded!")
-            ```
-      - getfunction
-        - Usage: getfunction(Name)
-        - Example: 
-            ```lua 
-            local GetFunction = API.getfunction("writefile")
-            if GetFunction ~= false then
-              API.customprint("perhapsHub", "Valid Function!")
-              GetFunction("perhapsHub.txt", [[print('hey')]])
-            end
             ```
       - checkforfunction
         - Usage: checkforfunction(Name)
