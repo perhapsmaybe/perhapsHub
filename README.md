@@ -1,6 +1,7 @@
 # perhapsHub
 
 **perhapsHub** was created by **[AFriendlyNewUser](https://v3rmillion.net/member.php?action=profile&uid=1730545)**
+View the **Cross Compatibility Script's** full functions here: **[Functions](https://github.com/perhapsmaybe/perhapsHub/blob/master/FunctionsList.md)**
 
 :warning: **You** may get banned, it is highly recommended to use an alt
 
@@ -22,6 +23,7 @@
     - Proxo
     - Fluxus 
     - EasyExploits
+  
   
   - [ Functions ]
     - Custom Functions
