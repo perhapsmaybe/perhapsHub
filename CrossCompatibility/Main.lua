@@ -64,11 +64,11 @@ for i, v in pairs(APIFunctions) do
     end 
 end
 
-for i, v in pairs(getfenv(0)) do
-    if is_synapse_function(v) and API[i] == nil then
-       API[i] = v 
+for i, v in pairs(getgenv()) do
+    if not API[i] then
+        API[i] = v
     end
-end
+end 
 
 function API.blacklistexploit(Exploit) if Exploit == CurrentExploit then table.insert(BlacklistedExploits, Exploit) end end
 
