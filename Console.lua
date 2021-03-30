@@ -13,6 +13,8 @@ SPLITHERE - Blade Quest
  - Arsenal
 ]]
 
+SplitText = SplitText:split("SPLITHERE")
+
 _G.Finished = true
 _G.CancelLoop = false
 
