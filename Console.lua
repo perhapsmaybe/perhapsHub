@@ -45,15 +45,8 @@ rconsoleinfo("Games")
 rconsoleprint("@@GREEN@@")
 rconsoleprint(Games)
 
-spawn(function()
-    while _G.Enabled do
-        wait()
-        repeat wait() until ConsoleName == ""
-        wait(2.5)
-        local marketplaceService = game:GetService("MarketplaceService")
-        local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, game.PlaceId)
-        if isSuccessful then
-            AnimateName("perhapsHub", info.Name)
-        end
-    end 
-end)
+local marketplaceService = game:GetService("MarketplaceService")
+local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, game.PlaceId)
+if isSuccessful then
+  ChangeName("perhapsHub", info.Name)
+end
