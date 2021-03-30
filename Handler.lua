@@ -1,6 +1,6 @@
 local GameIDs = {
     ["BladeQuest"] = 2429242760,
-    ["Arsenal"] = 0
+    ["Arsenal"] = 286090429
 }
 
 local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/perhapsmaybe/perhapsHub/master/CrossCompatibility/Main.lua"))()
