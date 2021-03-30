@@ -6,6 +6,6 @@ local GameIDs = {
 for i, v in pairs(GameIDs) do
     if game.gameId == v then 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/perhapsmaybe/perhapsHub/master/Games/"..i..".lua"))()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/perhapsmaybe/perhapsHub/master/Console.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/perhapsmaybe/perhapsHub/master/Console.lua"))()
     end 
 end
