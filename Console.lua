@@ -38,7 +38,7 @@ ClearConsole()
 ColoredText(Title)
 
 rconsoleprint("\n")
-rconsoleprint("@@GREEN@")
+rconsoleprint("@@GREEN@@")
 rconsoleprint("Loaded using ")
 rconsoleprint("@@CYAN@@")
 rconsoleprint(Exploit.."!")
