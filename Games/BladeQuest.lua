@@ -6,37 +6,14 @@ for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do if v.Name == "Flu
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ConvertedFunctions = ConvertFunctions()
+local ConvertedFunctions = loadstring(game:HttpGet("https://raw.githubusercontent.com/perhapsmaybe/perhapsHub/master/CrossCompatibility/Main.lua", true))()
 
-shared.BladeQuest = {["Player"] = {["MobTP"] = false, ["AutoAttack"] = false,["AutoDodge"] = false,["AutoSupport"] = false,["AutoDamage"] = false, ["attackWalkSpeed"] = 20, ["defaultWalkSpeed"] = 20},["Dungeon"] = {["CreateDungeon"] = false,["Map"] = "Forest",["Difficulty"] = "Easy",["Hardcore"] = false,["FriendsOnly"] = true},["Pathfinding"] = {
-        ["Pathfinding"] = true,
-        ["ShowPath"] = false,
-    },
-    ["AutoBuy"] = {
-        ["AutoBuy"] = true,
-        ["MaxBuyCost"] = 5000,
-        ["BuyBestSword"] = true,
-    },
-    ["AutoSell"] = {
-        ["AutoSell"] = false,
-        ["MaxSellValue"] = 10,
-        ["MaxLevel"] = 1,
-        ["MaxSellRarity"] = "Rare"
-    },
-    ["AutoMerge"] = {
-        ["AutoMerge"] = false,
-        ["MaxMergeRarity"] = "Rare"
-    },
-    ["Misc"] = {
-        ["ClaimQuests"] = false,
-        ["EquipBestSword"] = false
-    }
-}
+shared.BladeQuest = {["Player"] = {["MobTP"] = false, ["AutoAttack"] = false,["AutoDodge"] = false,["AutoSupport"] = false,["AutoDamage"] = false, ["attackWalkSpeed"] = 20, ["defaultWalkSpeed"] = 20},["Dungeon"] = {["CreateDungeon"] = false,["Map"] = "Forest",["Difficulty"] = "Easy",["Hardcore"] = false,["FriendsOnly"] = true},["Pathfinding"] = {["Pathfinding"] = true,["ShowPath"] = false,},["AutoBuy"] = {["AutoBuy"] = true,["MaxBuyCost"] = 5000,["BuyBestSword"] = true,},["AutoSell"] = {["AutoSell"] = false,["MaxSellValue"] = 10,["MaxLevel"] = 1,["MaxSellRarity"] = "Rare"},["AutoMerge"] = {["AutoMerge"] = false,["MaxMergeRarity"] = "Rare"},["Misc"] = {["ClaimQuests"] = false,["EquipBestSword"] = false}}
 
 local Lobby, Dungeon = CheckGame()
 
 if not Lobby and not Dungeon then return end 
-if not ConvertedFunctions then Players.LocalPlayer:Kick("Incompatible exploit, as of now Synapse X, Sentinel, and Protosmasher are supported!") end 
+if not ConvertedFunctions.readfile or not ConvertedFunctions.isfile or not ConvertedFunctions.writefile then Players.LocalPlayer:Kick("Incompatible exploit, view the main supported exploits at: https://github.com/perhapsmaybe/perhapsHub") end 
 
 CheckGame()
 
@@ -54,22 +31,16 @@ local TempPlayer = Players.LocalPlayer
 local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/fluxlib.txt")()
 local UI = Flux:Window("perhaps Hub", "\nBlade Quest", Color3.fromRGB(255, 110, 48), Enum.KeyCode.LeftControl)
 local Player = UI:Tab("Player", "http://www.roblox.com/asset/?id=6023426915")
-local Dungeon = UI:Tab("Dungeon", "http://www.roblox.com/asset/?id=6022668888")
-local Pathfinding = UI:Tab("Pathfinding", "http://www.roblox.com/asset/?id=6022668888")
-local AutoBuy = UI:Tab("Auto-Buy", "http://www.roblox.com/asset/?id=6022668888")
-local AutoSell = UI:Tab("Auto-Sell", "http://www.roblox.com/asset/?id=6022668888")
-local AutoMerge = UI:Tab("Auto-Merge", "http://www.roblox.com/asset/?id=6022668888")
-local MiscTab = UI:Tab("Misc", "http://www.roblox.com/asset/?id=6022668888")
-local InfoTab = UI:Tab("Credits", "http://www.roblox.com/asset/?id=6023426915")
+local Dungeon = UI:Tab("Dungeon", "http://www.roblox.com/asset/?id=6587510285")
+local Pathfinding = UI:Tab("Pathfinding", "http://www.roblox.com/asset/?id=6587510151")
+local Automation = UI:Tab("Automation", "http://www.roblox.com/asset/?id=6587510041")
+local InfoTab = UI:Tab("Credits", "http://www.roblox.com/asset/?id=6587512303")
 
 InfoTab:Label("V3rm Credits")
 InfoTab:Line()
 InfoTab:Label("AFriendlyNewUser - Creator")
 InfoTab:Label("e621 - Helping")
-InfoTab:Line()
-InfoTab:Label("Other Credits")
-InfoTab:Line()
-InfoTab:Label("Bluwu#3621 - Helping")
+InfoTab:Label("egg salad - Auto Merge")
 
 Pathfinding:Label("Pathfinding is coming soon!")
 
@@ -275,7 +246,7 @@ local DifficultiesDropdown = Dungeon:Dropdown("Dungeon Difficulty", TempDifficul
 
 -- Pathfinding
 
-local PathfindingToggle = Pathfinding:Toggle("Pathfinding", "Automatically moves to enemies", shared.BladeQuest["Pathfinding"]["Pathfinding"], function(Value) 
+local PathfindingToggle = Pathfinding:Toggle("Enabled", "Automatically moves to enemies", shared.BladeQuest["Pathfinding"]["Pathfinding"], function(Value) 
     shared.BladeQuest["Pathfinding"]["Pathfinding"] = Value 
     
     if Value and not Lobby then 
@@ -297,7 +268,8 @@ end)
 
 -- AutoBuy
 
-local AutoBuyToggle = AutoBuy:Toggle("Auto-Buy", "Automatically buy/upgrade swords when in lobby", shared.BladeQuest["AutoBuy"]["AutoBuy"], function(Value) 
+Automation:Label("Auto-Buy")
+local AutoBuyToggle = Automation:Toggle("Enabled", "Automatically buy/upgrade swords when in lobby", shared.BladeQuest["AutoBuy"]["AutoBuy"], function(Value) 
     shared.BladeQuest["AutoBuy"]["AutoBuy"] = Value 
     
     if Value and not Lobby then 
@@ -307,7 +279,7 @@ local AutoBuyToggle = AutoBuy:Toggle("Auto-Buy", "Automatically buy/upgrade swor
     end 
 end)
 
-local UpgradeBestSword = AutoBuy:Toggle("Upgrade Best Sword", "Automatically upgrades your best sword when in lobby", shared.BladeQuest["AutoBuy"]["BuyBestSword"], function(Value)
+local UpgradeBestSword = Automation:Toggle("Upgrade Best Sword", "Automatically upgrades your best sword when in lobby", shared.BladeQuest["AutoBuy"]["BuyBestSword"], function(Value)
     shared.BladeQuest["AutoBuy"]["BuyBestSword"] = Value 
     
     if Value and not Lobby then 
@@ -317,8 +289,7 @@ local UpgradeBestSword = AutoBuy:Toggle("Upgrade Best Sword", "Automatically upg
     end 
 end)
 
-AutoBuy:Line()
-local MaxBuyCost = AutoBuy:Textbox("Max Buy Cost", "Max buy cost for when buying/upgrading swords", false, function(Value) 
+local MaxBuyCost = Automation:Textbox("Max Buy Cost", "Max buy cost for when buying/upgrading swords", false, function(Value) 
     if not tonumber(Value) >= 0 then Value = 0 else Value = tonumber(Value) end
     shared.BladeQuest["AutoBuy"]["MaxBuyCost"] = tonumber(Value) or 0
     
@@ -331,21 +302,20 @@ end)
 
 -- AutoSell
 
+Automation:Line()
+Automation:Label("Auto-Sell | Coming Soon!")
+Automation:Line()
+Automation:Label("Auto-Merge")
+
 -- AutoMerge
 
-local AutoMergeToggle = AutoMerge:Toggle("Auto-Merge", "Automatically merges swords", shared.BladeQuest["AutoMerge"]["AutoMerge"], function(Value)
+local AutoMergeToggle = Automation:Toggle("Enabled", "Automatically merges swords", shared.BladeQuest["AutoMerge"]["AutoMerge"], function(Value)
     shared.BladeQuest["AutoMerge"]["AutoMerge"] = Value
     SaveSettings()
 
     if Value and Lobby then
         local SwordRarities = {}
-        local RarityValues = {
-            ["Common"] = 1,
-            ["Uncommon"] = 2,
-            ["Rare"] = 3,
-            ["Epic"] = 4,
-            ["Legendary"] = 5
-        }
+        local RarityValues = {["Common"] = 1,["Uncommon"] = 2,["Rare"] = 3,["Epic"] = 4,["Legendary"] = 5}
         local SwordFolder = game:GetService("ReplicatedStorage").Sword
 
         CreateLoop("AutoMerge", "AutoMerge", function(Value)
@@ -379,14 +349,16 @@ local AutoMergeToggle = AutoMerge:Toggle("Auto-Merge", "Automatically merges swo
     end
 end)
 
-local MaxRarityDropdown = AutoMerge:Dropdown("Max Rarity", {"Common", "Uncommon", "Rare", "Epic", "Legendary"}, function(Value)
+local MaxRarityDropdown = Automation:Dropdown("Max Rarity", {"Common", "Uncommon", "Rare", "Epic", "Legendary"}, function(Value)
     shared.BladeQuest["AutoMerge"]["MaxMergeRarity"] = Value
     SaveSettings()
 end)
 
 -- Misc 
 
-local EquipBestSword = MiscTab:Toggle("Equip Best Sword", "Automatically equips your best sword", shared.BladeQuest["Misc"]["EquipBestSword"], function(Value)
+Automation:Line()
+Automation:Label("Misc")
+local EquipBestSword = Automation:Toggle("Equip Best Sword", "Automatically equips your best sword", shared.BladeQuest["Misc"]["EquipBestSword"], function(Value)
     shared.BladeQuest["Misc"]["EquipBestSword"] = Value
     SaveSettings()
 
@@ -411,7 +383,7 @@ local EquipBestSword = MiscTab:Toggle("Equip Best Sword", "Automatically equips 
     end 
 end)
 
-local AutoClaimQuest = MiscTab:Toggle("Claim Quests", "Automatically claims quests for you when in lobby", shared.BladeQuest["Misc"]["ClaimQuest"], function(Value)
+local AutoClaimQuest = Automation:Toggle("Claim Quests", "Automatically claims quests for you when in lobby", shared.BladeQuest["Misc"]["ClaimQuest"], function(Value)
     shared.BladeQuest["Misc"]["ClaimQuest"] = Value
     
     if Value and Lobby then 
