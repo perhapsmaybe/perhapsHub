@@ -50,8 +50,9 @@ rconsoleprint("\n")
 rconsoleinfo("Games")
 rconsoleprint("@@GREEN@@")
 rconsoleprint(Games)
+rconsoleprint("\n")
 rconsoleprint("@@CYAN@@")
-rconsoleprint(
+rconsoleprint(Features)
 
 local marketplaceService = game:GetService("MarketplaceService")
 local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, game.PlaceId)
