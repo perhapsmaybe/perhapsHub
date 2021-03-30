@@ -1,3 +1,18 @@
+local SplitText = [[                               /$$                                     /$$   /$$           /$$      
+                              | $$                                    | $$  | $$          | $$      
+  /$$$$$$   /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$| $$  | $$ /$$   /$$| $$$$$$$ 
+ /$$__  $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$ /$$_____/| $$$$$$$$| $$  | $$| $$__  $$
+| $$  \ $$| $$$$$$$$| $$  \__/| $$  \ $$  /$$$$$$$| $$  \ $$|  $$$$$$ | $$__  $$| $$  | $$| $$  \ $$
+| $$  | $$| $$_____/| $$      | $$  | $$ /$$__  $$| $$  | $$ \____  $$| $$  | $$| $$  | $$| $$  | $$
+| $$$$$$$/|  $$$$$$$| $$      | $$  | $$|  $$$$$$$| $$$$$$$/ /$$$$$$$/| $$  | $$|  $$$$$$/| $$$$$$$/
+| $$____/  \_______/|__/      |__/  |__/ \_______/| $$____/ |_______/ |__/  |__/ \______/ |_______/ 
+| $$                                              | $$                                              
+| $$                                              | $$                                              
+|__/                                              |__/                                              
+SPLITHERE - Blade Quest 
+ - Arsenal
+]]
+
 _G.Finished = true
 _G.CancelLoop = false
 
@@ -16,8 +31,6 @@ function AnimateName(Text, Game) spawn(function() if _G.Finished == true and Con
 function ColoredText(Text) local CurrentName = "" CurrentColor = 0  for i, v in pairs(Text:split("")) do CurrentColor = CurrentColor + 1 if CurrentColor > #Colors then CurrentColor = 1 end rconsoleprint("@@"..Colors[CurrentColor].."@@") rconsoleprint(v) end end 
 function AnimateText(Text) rconsoleprint("@@LIGHT_GRAY@@") local CurrentName = "" rconsoleprint("\n") for i, v in pairs(Text:split("")) do CurrentName = CurrentName..v rconsoleprint(v) wait(0.1) end end 
 function AnimatedColoredText(Text) local CurrentName = "" rconsoleprint("\n") local CurrentName = "" CurrentColor = 0  for i, v in pairs(Text:split("")) do CurrentColor = CurrentColor + 1 if CurrentColor > #Colors then CurrentColor = 1 end rconsoleprint("@@"..Colors[CurrentColor].."@@") rconsoleprint(v) wait(0.1) end end
-
-local SplitText = loadstring(game:HttpGet("https://raw.githubusercontent.com/perhapsmaybe/perhapsHub/master/ConsoleText.txt", true))()
 
 local Title = SplitText[1]
 local Games = SplitText[2]
