@@ -11,6 +11,9 @@ local SplitText = [[                               /$$                          
 |__/                                              |__/                                              
 SPLITHERE - Blade Quest 
  - Arsenal
+SPLITHERE [*]: Blade Quest
+  - Auto-Farm, Auto-Attack, Auto-Support, Auto-Damage
+  - Mob TP
 ]]
 
 SplitText = SplitText:split("SPLITHERE")
@@ -33,6 +36,7 @@ function AnimatedColoredText(Text) local CurrentName = "" rconsoleprint("\n") lo
 
 local Title = SplitText[1]
 local Games = SplitText[2]
+local Features = SplitText[3]
 
 ClearConsole()
 ColoredText(Title)
@@ -46,6 +50,8 @@ rconsoleprint("\n")
 rconsoleinfo("Games")
 rconsoleprint("@@GREEN@@")
 rconsoleprint(Games)
+rconsoleprint("@@CYAN@@")
+rconsoleprint(
 
 local marketplaceService = game:GetService("MarketplaceService")
 local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, game.PlaceId)
