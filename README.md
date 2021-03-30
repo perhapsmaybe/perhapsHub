@@ -69,7 +69,7 @@ View the **Cross Compatibility Script's** full functions here: **[Functions](htt
         - Example:  
             ```lua 
             local CheckForFunction = API.checkforfunction("writefile")
-            if GetFunction ~= false then
+            if CheckForFunction ~= false then
               API.customprint("perhapsHub", "Valid Function!")
             else
               API.customwarn("perhapsHub", "Invalid Function!")
