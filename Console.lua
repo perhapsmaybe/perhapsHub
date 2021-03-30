@@ -11,9 +11,10 @@ local SplitText = [[                               /$$                          
 |__/                                              |__/                                              
 SPLITHERE - Blade Quest 
  - Arsenal
-SPLITHERE [*]: Blade Quest
-  - Auto-Farm, Auto-Attack, Auto-Support, Auto-Damage
-  - Mob TP
+SPLITHERE[INFO] Blade Quest | Features
+ - Auto-Farm, Auto-Attack, Auto-Support, Auto-Damage
+ - Mob TP
+ - and more!
 ]]
 
 SplitText = SplitText:split("SPLITHERE")
@@ -42,15 +43,24 @@ ClearConsole()
 ColoredText(Title)
 
 rconsoleprint("\n")
-rconsoleprint("@@GREEN@@")
+
+rconsoleprint("@@BLUE@@")
 rconsoleprint("Loaded using ")
 rconsoleprint("@@CYAN@@")
-rconsoleprint(Exploit.."!")
+rconsoleprint(Exploit)
+rconsoleprint("@@BLUE@@")
+rconsoleprint("!")
+
 rconsoleprint("\n")
-rconsoleinfo("Games")
+
 rconsoleprint("@@GREEN@@")
-rconsoleprint(Games)
+rconsoleprint("[INFO] Games")
+
 rconsoleprint("\n")
+rconsoleprint(Games)
+
+rconsoleprint("\n")
+
 rconsoleprint("@@CYAN@@")
 rconsoleprint(Features)
 
